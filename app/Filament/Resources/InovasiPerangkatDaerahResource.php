@@ -42,11 +42,13 @@ class InovasiPerangkatDaerahResource extends Resource
                 Tables\Columns\TextColumn::make('tahun'),
                 Tables\Columns\TextColumn::make('user.email'),
             ])
+            ->emptyStateHeading('Tidak ada data inovasi')
             ->filters([
                 //
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([

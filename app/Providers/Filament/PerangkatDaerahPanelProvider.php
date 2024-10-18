@@ -6,6 +6,7 @@ use Filament\Pages;
 use Filament\Panel;
 use Filament\Widgets;
 use Filament\PanelProvider;
+use Filament\Enums\ThemeMode;
 use Filament\Support\Colors\Color;
 use Filament\Support\Enums\MaxWidth;
 use Filament\Http\Middleware\Authenticate;
@@ -33,6 +34,7 @@ class PerangkatDaerahPanelProvider extends PanelProvider
             ->favicon(asset('img/rkc-logo.png'))
             ->sidebarCollapsibleOnDesktop(true)
             ->maxContentWidth(MaxWidth::Full)
+            ->defaultThemeMode(ThemeMode::Light)
             ->colors([
                 'primary' => Color::Blue,
             ])

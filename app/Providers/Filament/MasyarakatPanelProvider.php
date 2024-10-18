@@ -6,6 +6,7 @@ use Filament\Pages;
 use Filament\Panel;
 use Filament\Widgets;
 use Filament\PanelProvider;
+use Filament\Enums\ThemeMode;
 use Filament\Support\Colors\Color;
 use Filament\Support\Enums\MaxWidth;
 use Filament\Http\Middleware\Authenticate;
@@ -36,6 +37,7 @@ class MasyarakatPanelProvider extends PanelProvider
             ->colors([
                 'primary' => Color::Green,
             ])
+            ->defaultThemeMode(ThemeMode::Light)
             ->discoverResources(in: app_path('Filament/Masyarakat/Resources'), for: 'App\\Filament\\Masyarakat\\Resources')
             ->discoverPages(in: app_path('Filament/Masyarakat/Pages'), for: 'App\\Filament\\Masyarakat\\Pages')
             ->pages([
