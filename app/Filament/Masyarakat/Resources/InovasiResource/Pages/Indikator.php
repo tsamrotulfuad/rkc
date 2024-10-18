@@ -1,0 +1,107 @@
+<?php
+
+namespace App\Filament\Masyarakat\Resources\InovasiResource\Pages;
+
+use Filament\Forms;
+use Filament\Tables;
+use Filament\Actions;
+use Filament\Forms\Form;
+use Filament\Tables\Table;
+use App\Models\IndikatorMasyarakat;
+use Illuminate\Database\Eloquent\Builder;
+use Filament\Resources\Pages\ManageRelatedRecords;
+use Illuminate\Database\Eloquent\SoftDeletingScope;
+use App\Filament\Masyarakat\Resources\InovasiResource;
+use Schmeits\FilamentCharacterCounter\Forms\Components\Textarea;
+
+class Indikator extends ManageRelatedRecords
+{
+    protected static ?string $model = IndikatorMasyarakat::class;
+
+    protected static string $resource = InovasiResource::class;
+
+    protected static string $relationship = 'indikator';
+
+    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+
+    // public static function getNavigationLabel(): string
+    // {
+    //     return 'Indikator';
+    // }
+
+    public function form(Form $form): Form
+    {
+        return $form
+            ->schema([
+                    Textarea::make('kemudahan_proses')
+                    ->columnSpanFull()
+                    ->characterLimit(3000)
+                    ->required(),
+                    Textarea::make('keterlibatan_aktor')
+                    ->columnSpanFull()
+                    ->characterLimit(3000)
+                    ->required(),
+                    Forms\Components\Select::make('sosialisasi')
+                    ->options([
+                        'Media Berita' => 'Media Berita',
+                        'Konten Media Sosial' => 'Konten Media Sosial',
+                        'Foto Sosialisasi' => 'Foto Sosialisasi',
+                    ])
+                    ->native(false)
+                    ->columnSpanFull(),
+                    Forms\Components\FileUpload::make('sosialisasi_upload')
+                    ->label('Bukti Dukung Sosialisasi')
+                    ->columnSpanFull()
+                    ->required(),
+                    Textarea::make('kemanfaatan')
+                    ->columnSpanFull()
+                    ->characterLimit(3000)
+                    ->required(),
+                    Forms\Components\FileUpload::make('kemanfaatan_upload')
+                    ->label('Bukti Dukung Kemanfaatan')
+                    ->columnSpanFull()
+                    ->required(),
+                    Forms\Components\FileUpload::make('kualitas')
+                    ->required()
+                    ->columnSpanFull()
+            ]);
+    }
+
+    public function table(Table $table): Table
+    {
+        return $table
+            ->recordTitleAttribute('nama')
+            ->columns([
+                Tables\Columns\TextColumn::make('kemudahan_proses')
+                ->words(5),
+                Tables\Columns\TextColumn::make('keterlibatan_aktor')
+                ->words(5),
+                Tables\Columns\TextColumn::make('sosialisasi')
+                ->words(5),
+                Tables\Columns\TextColumn::make('kemanfaatan')
+                ->words(5),
+            ])
+            ->emptyStateHeading('Tidak ada data indikator')
+            ->emptyStateDescription(false)
+            ->filters([
+                //
+            ])
+            ->headerActions([
+                Tables\Actions\CreateAction::make()
+                ->label('Tambah Indikator')
+                ->createAnother(false)
+                ->modalHeading('List Indikator'),
+            ])
+            ->actions([
+                Tables\Actions\ViewAction::make(),
+                Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(),
+            ])
+            ->bulkActions([
+                Tables\Actions\BulkActionGroup::make([
+                    Tables\Actions\DissociateBulkAction::make(),
+                    Tables\Actions\DeleteBulkAction::make(),
+                ]),
+            ]);
+    }
+}
