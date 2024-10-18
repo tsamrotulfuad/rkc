@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reka Karsa Cipta 2024</title>
+    <link rel="shortcut icon" href="{{ asset('img/rkc-logo.png') }}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
@@ -50,7 +51,7 @@
                 <h5 class="card-title fw-bold">Instansi Perangkat Daerah</h5>
             </div>
             <div class="card-footer">
-                <a type="button" class="btn btn-outline-primary">Daftar</a>
+                <a href="http://103.165.154.47:8000/instansiperangkatdaerah" type="button" class="btn btn-outline-primary">Daftar</a>
             </div>
         </div>
         <div class="card">
@@ -62,7 +63,7 @@
                 <h5 class="card-title fw-bold">Masyarakat</h5>
             </div>
             <div class="card-footer">
-                <a type="button" class="btn btn-outline-primary">Daftar</a>
+                <a href="http://103.165.154.47:8000/masyarakat" type="button" class="btn btn-outline-primary">Daftar</a>
             </div>
         </div>
     </div>
