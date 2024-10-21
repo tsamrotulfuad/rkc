@@ -22,9 +22,9 @@ class User extends Authenticatable implements FilamentUser
     {
         return match($panel->getId()) {
             default => false,
-            'admin' => str_starts_with($this->email, 'bappelitbangda@'),
-            'perangkatDaerah' => str_ends_with($this->email, '@pasuruankota.go.id'),
-            'masyarakat' => str_ends_with($this->email, '.com'),
+            'admin' => str_starts_with($this->email, 'bappelitbangda@pasuruankota.go.id') && $this->hasRole('super_admin'),
+            'perangkatDaerah' => $this->hasRole('Perangkat Daerah'),
+            'masyarakat' =>  $this->hasRole('Masyarakat'),
         };
     }
 
