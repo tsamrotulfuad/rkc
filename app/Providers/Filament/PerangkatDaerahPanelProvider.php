@@ -2,6 +2,7 @@
 
 namespace App\Providers\Filament;
 
+use App\Filament\PerangkatDaerah\Pages\Auth\PerangkatDaerahRegister;
 use Filament\Pages;
 use Filament\Panel;
 use Filament\Widgets;
@@ -28,7 +29,7 @@ class PerangkatDaerahPanelProvider extends PanelProvider
             ->id('perangkatDaerah')
             ->path('instansiperangkatdaerah')
             ->login()
-            ->registration()
+            ->registration(PerangkatDaerahRegister::class)
             ->brandLogo(asset('img/rkc-logo.png'))
             ->brandLogoHeight(fn() => auth()->check() ? '3.6rem' : '9rem' )
             ->favicon(asset('img/rkc-logo.png'))
@@ -61,6 +62,9 @@ class PerangkatDaerahPanelProvider extends PanelProvider
             ])
             ->authMiddleware([
                 Authenticate::class,
+            ])
+            ->plugins([
+                \BezhanSalleh\FilamentShield\FilamentShieldPlugin::make()
             ]);
     }
 }

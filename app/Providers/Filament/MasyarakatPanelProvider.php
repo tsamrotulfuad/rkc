@@ -2,6 +2,7 @@
 
 namespace App\Providers\Filament;
 
+use App\Filament\Masyarakat\Pages\Auth\MasyarakatRegister;
 use Filament\Pages;
 use Filament\Panel;
 use Filament\Widgets;
@@ -28,7 +29,7 @@ class MasyarakatPanelProvider extends PanelProvider
             ->id('masyarakat')
             ->path('masyarakat')
             ->login()
-            ->registration()
+            ->registration(MasyarakatRegister::class)
             ->brandLogo(asset('img/rkc-logo.png'))
             ->brandLogoHeight(fn() => auth()->check() ? '3.6rem' : '9rem' )
             ->favicon(asset('img/rkc-logo.png'))
@@ -61,6 +62,9 @@ class MasyarakatPanelProvider extends PanelProvider
             ])
             ->authMiddleware([
                 Authenticate::class,
+            ])
+            ->plugins([
+                \BezhanSalleh\FilamentShield\FilamentShieldPlugin::make()
             ]);
     }
 }
