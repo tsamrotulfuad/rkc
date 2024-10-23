@@ -8,6 +8,7 @@ use Filament\Forms\Form;
 use Filament\Tables\Table;
 use Filament\Resources\Resource;
 use App\Models\InovasiPerangkatDaerah;
+use Illuminate\Support\Facades\Storage;
 use Filament\Tables\Actions\ActionGroup;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
@@ -179,7 +180,22 @@ class InovasiResource extends Resource
                 ActionGroup::make([
                     Tables\Actions\ViewAction::make(),
                     Tables\Actions\EditAction::make(),
-                    Tables\Actions\DeleteAction::make(),
+                    Tables\Actions\DeleteAction::make()
+                    ->after(function (InovasiPerangkatDaerah $record) {
+                        // delete file
+                        if ($record->anggaran) {
+                            Storage::disk('public')->delete($record->anggaran);
+                        }
+                        if ($record->profil_bisnis) {
+                            Storage::disk('public')->delete($record->profil_bisnis);
+                        }
+                        if ($record->doc_haki) {
+                            Storage::disk('public')->delete($record->doc_haki);
+                        }
+                        if ($record->penghargaan) {
+                            Storage::disk('public')->delete($record->penghargaan);
+                        }
+                    }),
                 ])
             ])
             // ->recordUr

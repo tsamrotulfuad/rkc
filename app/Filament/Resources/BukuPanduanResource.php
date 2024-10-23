@@ -56,12 +56,12 @@ class BukuPanduanResource extends Resource
             ->actions([
                 Tables\Actions\EditAction::make(),
                 Tables\Actions\DeleteAction::make()
-                ->after(function (BukuPanduan $record) {
-                    // delete single
-                    if ($record->file) {
-                       Storage::disk('public')->delete($record->file);
-                    }
-                 }),
+                    ->after(function (BukuPanduan $record) {
+                        // delete single
+                        if ($record->file) {
+                        Storage::disk('public')->delete($record->file);
+                        }
+                    }),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([

@@ -2,17 +2,18 @@
 
 namespace App\Filament\PerangkatDaerah\Resources\InovasiResource\Pages;
 
-use App\Filament\PerangkatDaerah\Resources\InovasiResource;
-use App\Models\IndikatorPerangkatDaerah;
-use Filament\Actions;
 use Filament\Forms;
-use Filament\Forms\Components\Section;
-use Filament\Forms\Form;
-use Filament\Resources\Pages\ManageRelatedRecords;
 use Filament\Tables;
+use Filament\Actions;
+use Filament\Forms\Form;
 use Filament\Tables\Table;
+use Filament\Forms\Components\Section;
+use Illuminate\Support\Facades\Storage;
+use App\Models\IndikatorPerangkatDaerah;
 use Illuminate\Database\Eloquent\Builder;
+use Filament\Resources\Pages\ManageRelatedRecords;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use App\Filament\PerangkatDaerah\Resources\InovasiResource;
 
 class Indikator extends ManageRelatedRecords
 {
@@ -240,7 +241,37 @@ class Indikator extends ManageRelatedRecords
                 ->modalHeading('View Indikator'),
                 Tables\Actions\EditAction::make()
                 ->modalHeading('Edit Indikator'),
-                Tables\Actions\DeleteAction::make(),
+                Tables\Actions\DeleteAction::make()
+                ->after(function (IndikatorPerangkatDaerah $record) {
+                    // delete single
+                    if ($record->regulasi_upload) {
+                        Storage::disk('public')->delete($record->regulasi_upload);
+                    }
+                    if ($record->ketersediaan_sdm_upload) {
+                        Storage::disk('public')->delete($record->ketersediaan_sdm_upload);
+                    }
+                    if ($record->dukungan_anggaran_upload) {
+                        Storage::disk('public')->delete($record->dukungan_anggaran_upload);
+                    }
+                    if ($record->kecepatan_penciptaan_upload) {
+                        Storage::disk('public')->delete($record->kecepatan_penciptaan_upload);
+                    }
+                    if ($record->kemanfaatan_upload) {
+                        Storage::disk('public')->delete($record->kemanfaatan_upload);
+                    }
+                    if ($record->sosialisasi_upload) {
+                        Storage::disk('public')->delete($record->sosialisasi_upload);
+                    }
+                    if ($record->kemudahan_proses_upload) {
+                        Storage::disk('public')->delete($record->kemudahan_proses_upload);
+                    }
+                    if ($record->alat_kerja_upload) {
+                        Storage::disk('public')->delete($record->alat_kerja_upload);
+                    }
+                    if ($record->kualitas) {
+                        Storage::disk('public')->delete($record->kualitas);
+                    }
+                }),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([

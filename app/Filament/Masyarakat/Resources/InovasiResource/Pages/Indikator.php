@@ -8,6 +8,7 @@ use Filament\Actions;
 use Filament\Forms\Form;
 use Filament\Tables\Table;
 use App\Models\IndikatorMasyarakat;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Database\Eloquent\Builder;
 use Filament\Resources\Pages\ManageRelatedRecords;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
@@ -95,7 +96,19 @@ class Indikator extends ManageRelatedRecords
             ->actions([
                 Tables\Actions\ViewAction::make(),
                 Tables\Actions\EditAction::make(),
-                Tables\Actions\DeleteAction::make(),
+                Tables\Actions\DeleteAction::make()
+                ->after(function (IndikatorMasyarakat $record) {
+                    // delete file
+                    if ($record->sosialisasi_upload) {
+                        Storage::disk('public')->delete($record->sosialisasi_upload);
+                    }
+                    if ($record->kemanfaatan_upload) {
+                        Storage::disk('public')->delete($record->kemanfaatan_upload);
+                    }
+                    if ($record->kualitas) {
+                        Storage::disk('public')->delete($record->kualitas);
+                    }
+                }),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
