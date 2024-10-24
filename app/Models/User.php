@@ -25,6 +25,7 @@ class User extends Authenticatable implements FilamentUser
             'admin' => str_starts_with($this->email, 'bappelitbangda@pasuruankota.go.id') && $this->hasRole('super_admin'),
             'perangkatDaerah' => $this->hasRole('Perangkat Daerah'),
             'masyarakat' =>  $this->hasRole('Masyarakat'),
+            'juri' => $this->hasRole('Juri'),
         };
     }
 

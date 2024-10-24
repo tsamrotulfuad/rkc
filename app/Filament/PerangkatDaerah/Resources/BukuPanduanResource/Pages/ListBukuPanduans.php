@@ -16,4 +16,9 @@ class ListBukuPanduans extends ListRecords
             // Actions\CreateAction::make(),
         ];
     }
+
+    public function getTitle() : string
+    {
+        return "Buku Panduan";
+    }
 }
