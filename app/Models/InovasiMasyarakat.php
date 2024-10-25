@@ -5,8 +5,9 @@ namespace App\Models;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class InovasiMasyarakat extends Model
 {
@@ -17,12 +18,21 @@ class InovasiMasyarakat extends Model
     //set user_id by id auth user
     protected static function booted() 
     {
+        parent::boot();
+
         static::creating(function($model) {
             $model->user_id = Auth::user()->id;
         });
 
         static::creating(function($model) {
             $model->tahun = Carbon::now()->format('Y');
+        });
+
+        /** @var Model $model */
+        static::updating(function ($model) {
+            if ($model->isDirty('penghargaan') && ($model->getOriginal('penghargaan') !== null)) {
+                Storage::disk('public')->delete($model->getOriginal('penghargaan'));
+            }
         });
     }
 

@@ -95,7 +95,8 @@ class InovasiResource extends Resource
                 ->rows(5)
                 ->columnSpan(2)
                 ->required(),
-                Forms\Components\FileUpload::make('penghargaan'),
+                Forms\Components\FileUpload::make('penghargaan')
+                ->preserveFilenames(),
             ]);
     }
 

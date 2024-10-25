@@ -52,6 +52,7 @@ class Indikator extends ManageRelatedRecords
                     ->columnSpanFull(),
                     Forms\Components\FileUpload::make('sosialisasi_upload')
                     ->label('Bukti Dukung Sosialisasi')
+                    ->preserveFilenames()
                     ->columnSpanFull()
                     ->required(),
                     Textarea::make('kemanfaatan')
@@ -60,9 +61,11 @@ class Indikator extends ManageRelatedRecords
                     ->required(),
                     Forms\Components\FileUpload::make('kemanfaatan_upload')
                     ->label('Bukti Dukung Kemanfaatan')
+                    ->preserveFilenames()
                     ->columnSpanFull()
                     ->required(),
                     Forms\Components\FileUpload::make('kualitas')
+                    ->preserveFilenames()
                     ->required()
                     ->columnSpanFull()
             ]);
