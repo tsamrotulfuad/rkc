@@ -165,7 +165,8 @@ class InovasiPerangkatDaerahResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('nama'),
+                Tables\Columns\TextColumn::make('nama')
+                ->wrap(),
                 Tables\Columns\TextColumn::make('tahapan'),
                 Tables\Columns\TextColumn::make('nama_inisiator')
                 ->label('Nama Inisiator'),
@@ -175,6 +176,8 @@ class InovasiPerangkatDaerahResource extends Resource
                 ->sortable(),
             ])
             ->emptyStateHeading('Tidak ada data inovasi')
+            ->recordUrl(null)
+            ->recordAction(null)
             ->filters([
                 //
             ])
