@@ -96,7 +96,8 @@ class InovasiMasyarakatResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('nama'),
+                Tables\Columns\TextColumn::make('nama')
+                ->wrap(),
                 Tables\Columns\TextColumn::make('nama_inisiator'),
                 Tables\Columns\TextColumn::make('tahapan'),
                 Tables\Columns\TextColumn::make('jenis'),

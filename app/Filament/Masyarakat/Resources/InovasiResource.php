@@ -96,7 +96,8 @@ class InovasiResource extends Resource
                 ->columnSpan(2)
                 ->required(),
                 Forms\Components\FileUpload::make('penghargaan')
-                ->preserveFilenames(),
+                ->preserveFilenames()
+                ->downloadable(),
             ]);
     }
 
@@ -104,7 +105,8 @@ class InovasiResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('nama'),
+                Tables\Columns\TextColumn::make('nama')
+                ->wrap(),
                 Tables\Columns\TextColumn::make('tahapan'),
                 Tables\Columns\TextColumn::make('nama_inisiator'),
                 Tables\Columns\TextColumn::make('waktu_ujicoba'),

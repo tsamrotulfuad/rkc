@@ -143,10 +143,18 @@ class InovasiPerangkatDaerahResource extends Resource
                 ->rows(5)
                 ->columnSpan(2)
                 ->required(),
-                Forms\Components\FileUpload::make('anggaran'),
-                Forms\Components\FileUpload::make('profil_bisnis'),
-                Forms\Components\FileUpload::make('doc_haki'),
-                Forms\Components\FileUpload::make('penghargaan'),
+                Forms\Components\FileUpload::make('anggaran')
+                ->preserveFilenames()
+                ->downloadable(),
+                Forms\Components\FileUpload::make('profil_bisnis')
+                ->preserveFilenames()
+                ->downloadable(),
+                Forms\Components\FileUpload::make('doc_haki')
+                ->preserveFilenames()
+                ->downloadable(),
+                Forms\Components\FileUpload::make('penghargaan')
+                ->preserveFilenames()
+                ->downloadable(),
             ]);
     }
 
@@ -154,7 +162,8 @@ class InovasiPerangkatDaerahResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('nama'),
+                Tables\Columns\TextColumn::make('nama')
+                ->wrap(),
                 Tables\Columns\TextColumn::make('nama_inisiator'),
                 Tables\Columns\TextColumn::make('tahapan'),
                 Tables\Columns\TextColumn::make('jenis'),
