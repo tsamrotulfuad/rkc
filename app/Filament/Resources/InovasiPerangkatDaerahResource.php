@@ -2,16 +2,18 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\InovasiPerangkatDaerahResource\Pages;
-use App\Filament\Resources\InovasiPerangkatDaerahResource\RelationManagers;
-use App\Models\InovasiPerangkatDaerah;
 use Filament\Forms;
-use Filament\Forms\Form;
-use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Forms\Form;
 use Filament\Tables\Table;
+use Filament\Resources\Resource;
+use App\Models\InovasiPerangkatDaerah;
+use Illuminate\Support\Facades\Storage;
+use Filament\Tables\Actions\ActionGroup;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use App\Filament\Resources\InovasiPerangkatDaerahResource\Pages;
+use App\Filament\Resources\InovasiPerangkatDaerahResource\RelationManagers;
 
 class InovasiPerangkatDaerahResource extends Resource
 {
@@ -175,9 +177,22 @@ class InovasiPerangkatDaerahResource extends Resource
                 //
             ])
             ->actions([
-                Tables\Actions\ViewAction::make(),
-                Tables\Actions\EditAction::make(),
-                Tables\Actions\DeleteAction::make(),
+                Tables\Actions\Action::make('Indikator')
+                    ->url(fn($record): string => InovasiPerangkatDaerahResource::getUrl('indikator', ['record' => $record]))
+                    ->icon('heroicon-s-folder')
+                    ->button()
+                    ->outlined(),
+                ActionGroup::make([
+                    Tables\Actions\ViewAction::make(),
+                    Tables\Actions\EditAction::make(),
+                    Tables\Actions\DeleteAction::make()
+                    ->after(function (InovasiPerangkatDaerah $record) {
+                        // delete single
+                        if ($record->penghargaan) {
+                            Storage::disk('public')->delete($record->penghargaan);
+                        }
+                    }),
+                ])
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
@@ -199,6 +214,7 @@ class InovasiPerangkatDaerahResource extends Resource
             'index' => Pages\ListInovasiPerangkatDaerahs::route('/'),
             'create' => Pages\CreateInovasiPerangkatDaerah::route('/create'),
             'edit' => Pages\EditInovasiPerangkatDaerah::route('/{record}/edit'),
+            'indikator' => Pages\IndikatorPerangkatDaerah::route('/{record}/indikator'),
         ];
     }
 }
