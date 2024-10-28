@@ -26,6 +26,11 @@ class InovasiResource extends Resource
     protected static ?string $navigationLabel = 'Inovasi';
 
     protected static ?string $breadcrumb = "Inovasi";
+    
+    public static function getEloquentQuery(): Builder
+    {
+        return parent::getEloquentQuery()->where('user_id', auth()->id());
+    }
 
     public static function form(Form $form): Form
     {
