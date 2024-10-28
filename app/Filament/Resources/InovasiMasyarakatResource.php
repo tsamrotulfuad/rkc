@@ -29,7 +29,66 @@ class InovasiMasyarakatResource extends Resource
     {
         return $form
             ->schema([
-                //
+                Forms\Components\TextInput::make('nama')
+                ->columnSpanFull()
+                ->label('Nama Inovasi')
+                ->required(),
+                Forms\Components\TextInput::make('nama_inisiator')
+                ->columnSpanFull()
+                ->label('Nama Inisiator')
+                ->required(),
+                Forms\Components\TextInput::make('no_hp')
+                ->label('Nomor Handphone')
+                ->tel()
+                ->telRegex('/^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\.\/0-9]*$/')
+                ->required(),
+                Forms\Components\TextInput::make('ktp')
+                ->label('KTP')
+                ->maxLength(16)
+                ->minLength(16)
+                ->numeric()
+                ->required(),
+                Forms\Components\Select::make('bentuk')
+                ->options([
+                    'aplikasi_teknologi' => 'Aplikasi dan Teknologi',
+                    'produk_jasa' => 'Produk dan Jasa',
+                    'program_pergerakan' => 'Program dan Pergerakan',
+                ])->native(false)->required(),
+                Forms\Components\Select::make('tahapan')
+                ->options([
+                    'inisiatif' => 'Inisiatif',
+                    'ujicoba' => 'Uji Coba',
+                    'penerapan' => 'Penerapan',
+                ])->native(false)->required(),
+                Forms\Components\Select::make('jenis')
+                ->options([
+                    'digital' => 'Digital',
+                    'non_digital' => 'Non Digital',
+                ])->native(false)->required(),
+                Forms\Components\DatePicker::make('waktu_ujicoba')->required(),
+                Forms\Components\DatePicker::make('waktu_penerapan')->required(),
+                Forms\Components\RichEditor::make('rancang_bangun')
+                ->hint('Min. 300 Kata')
+                ->minLength(300)
+                ->columnSpan(2)
+                ->required(),
+                // ->hint(fn ($state, $component) => 'Jumlah: ' . str_word_count($state, 0)  . '')
+                // // ->maxlength(3000)
+                // ->live()
+                Forms\Components\Textarea::make('tujuan')
+                ->rows(5)
+                ->columnSpan(2)
+                ->required(),
+                Forms\Components\Textarea::make('manfaat')
+                ->rows(5)
+                ->columnSpan(2)
+                ->required(),
+                Forms\Components\Textarea::make('hasil')
+                ->rows(5)
+                ->columnSpan(2)
+                ->required(),
+                Forms\Components\FileUpload::make('penghargaan')
+                ->preserveFilenames(),
             ]);
     }
 
