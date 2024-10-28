@@ -148,16 +148,20 @@ class InovasiPerangkatDaerahResource extends Resource
                 ->required(),
                 Forms\Components\FileUpload::make('anggaran')
                 ->preserveFilenames()
-                ->openable(),
+                ->openable()
+                ->deletable(false),
                 Forms\Components\FileUpload::make('profil_bisnis')
                 ->preserveFilenames()
-                ->openable(),
+                ->openable()
+                ->deletable(false),
                 Forms\Components\FileUpload::make('doc_haki')
                 ->preserveFilenames()
-                ->openable(),
+                ->openable()
+                ->deletable(false),
                 Forms\Components\FileUpload::make('penghargaan')
                 ->preserveFilenames()
-                ->openable(),
+                ->openable()
+                ->deletable(false),
             ]);
     }
 
