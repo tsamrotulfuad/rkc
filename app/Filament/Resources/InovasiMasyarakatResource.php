@@ -88,7 +88,8 @@ class InovasiMasyarakatResource extends Resource
                 ->columnSpan(2)
                 ->required(),
                 Forms\Components\FileUpload::make('penghargaan')
-                ->preserveFilenames(),
+                ->preserveFilenames()
+                ->openable(),
             ]);
     }
 

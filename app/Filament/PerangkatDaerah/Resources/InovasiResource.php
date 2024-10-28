@@ -149,16 +149,16 @@ class InovasiResource extends Resource
                 ->required(),
                 Forms\Components\FileUpload::make('anggaran')
                 ->preserveFilenames()
-                ->downloadable(),
+                ->openable(),
                 Forms\Components\FileUpload::make('profil_bisnis')
                 ->preserveFilenames()
-                ->downloadable(),
+                ->openable(),
                 Forms\Components\FileUpload::make('doc_haki')
                 ->preserveFilenames()
-                ->downloadable(),
+                ->openable(),
                 Forms\Components\FileUpload::make('penghargaan')
                 ->preserveFilenames()
-                ->downloadable(),
+                ->openable(),
             ]);
     }
 

@@ -97,7 +97,7 @@ class InovasiResource extends Resource
                 ->required(),
                 Forms\Components\FileUpload::make('penghargaan')
                 ->preserveFilenames()
-                ->downloadable(),
+                ->openable(),
             ]);
     }
 
