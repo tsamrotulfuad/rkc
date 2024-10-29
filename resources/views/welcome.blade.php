@@ -141,8 +141,8 @@
                                     </div>
                                     <div class="col-md-8">
                                     <div class="card-body">
-                                        <h5 class="card-title fw-bold">Instansi Perangkat Daerah</h5>
-                                        <p class="card-text">Perangkat Daerah (PD), Unit Pelaksana Teknis (UPT)</p>
+                                        <h5 class="card-title fw-bold">Instansi Pemerintah Daerah</h5>
+                                        <p class="card-text">Perangkat Daerah (PD), Unit Pelaksana Teknis (UPT), Kelurahan</p>
                                     </div>
                                     </div>
                                 </div>
