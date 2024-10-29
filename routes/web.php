@@ -16,3 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/buku-panduan-rkc2024', function () {
+    return response()->download(public_path('storage/'. 'PANDUAN INOVASI REKA KARSA CIPTA 2024.pdf'));
+});

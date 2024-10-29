@@ -100,7 +100,7 @@
                         <a class="nav-link px-4" aria-current="page" href="/">Beranda</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link px-4" aria-current="page" href="#">Panduan Pengisian</a>
+                        <a class="nav-link px-4" aria-current="page" href="/buku-panduan-rkc2024">Panduan Pengisian</a>
                     </li>
                 </ul>
             </div>
