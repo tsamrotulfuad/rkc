@@ -1,0 +1,60 @@
+/* Show it is fixed to the top */
+body {
+    min-height: 75rem;
+    padding-top: 4.5rem;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Make the body take at least the full height of the viewport */
+}
+
+.navbar {
+    background-color: white;
+}
+
+.text-countdown {
+    font-size: 25px;
+}
+.timer {
+    font-size: 20px;
+    text-align: center;
+    padding: 15px; /* Add some padding */
+    border: 2px solid #000000; /* Border color and thickness */
+    border-radius: 5px; /* Rounded corners */
+    background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent background */
+}
+
+.content {
+    flex: 1; /* Make the content area flexible */
+}
+
+.center {
+    display: block;
+    margin: 0 auto;
+    width: 50%;
+}
+
+.kategori {
+    padding: 2.5em;
+}
+
+
+
+.text-kategori {
+    font-size: 35px;
+}
+
+.dokumentasi {
+    font-size: 35px;
+    margin-top: 80px;
+    justify-content: center;
+}
+
+footer {
+    justify-content: center;
+    background-color: #f8f9fa; /* Light background for the footer */
+    padding: 20px 0; /* Padding for the footer */
+}
+
+@media (min-width: 992px) {
+    .rounded-lg-3 { border-radius: .3rem; }
+}
