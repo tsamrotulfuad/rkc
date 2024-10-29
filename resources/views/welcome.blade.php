@@ -114,7 +114,7 @@
                     <img src="{{ asset('img/rkc-logo.png')}}" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
                 </div>
                 <div class="col-lg-6">
-                    <h1 class="display-4 fw-bold mb-3">Lomba Inovasi Daerah</h1>
+                    <h1 class="display-4 fw-bold mb-3">Anugerah Inovasi Daerah</h1>
                     <h1 class="display-6 fw-medium text-body-emphasis lh-1 mb-3">Kota Pasuruan</h1>
                 </div>
             </div>
@@ -169,10 +169,11 @@
                 </div>
             </div>
         </div>
-       
+       <!-- Tambah List 10 Besar san Pemenang RKC 2023 -->
+
         <div class="container text-center my-5 dokumentasi border-top">
             <div class="py-3">
-                Dokumentasi IGA 2023
+                Kilas Balik RKC 2023
             </div> 
             <div class="container mt-4">
                 <div class="row">
