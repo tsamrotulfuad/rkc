@@ -114,7 +114,7 @@
                     <img src="{{ asset('img/rkc-logo.png')}}" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
                 </div>
                 <div class="col-lg-6">
-                    <h1 class="display-4 fw-bold mb-3">Anugerah Inovasi Daerah</h1>
+                    <h1 class="display-4 fw-bold mb-3">Anugerah Inovasi</h1>
                     <h1 class="display-6 fw-medium text-body-emphasis lh-1 mb-3">Kota Pasuruan</h1>
                 </div>
             </div>
@@ -170,10 +170,111 @@
             </div>
         </div>
        <!-- Tambah List 10 Besar san Pemenang RKC 2023 -->
+        <div class="pemenang">
+            <div class="container text-center my-2 text-kategori border-top py-3">
+                Daftar Pemenang Reka Karsa Cipta 2023
+            </div>
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col">
+                        <div class="d-flex flex-column flex-md-row p-4 gap-4 py-md-5 align-items-center justify-content-center">
+                            <div class="list-group">
+                                <div class="py-2">
+                                    <h4>Kategori Perangkat Daerah Tiga Terbaik:</h4>
+                                </div> 
+                                <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+                                <img src="{{ asset('img/kotapasuruan-logo.png')}}" alt="twbs" width="45px" class="rounded-circle flex-shrink-0">
+                                <div class="d-flex gap-2 w-100 justify-content-between">
+                                    <div>
+                                    <h6 class="mb-2 fw-bold">TITIK NOL</h6>
+                                    <p class="mb-0 opacity-75">Dinas Kependudukan dan Pencatatan Sipil Kota Pasuruan</p>
+                                    </div>
+                                </div>
+                                </a>
+                                <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+                                <img src="{{ asset('img/kotapasuruan-logo.png')}}" alt="twbs" width="45px" class="rounded-circle flex-shrink-0">
+                                <div class="d-flex gap-2 w-100 justify-content-between">
+                                    <div>
+                                    <h6 class="mb-2 fw-bold">PEACE LOVE</h6>
+                                    <p class="mb-0 opacity-75">UPT Puskesmas Bugul Kidul Kota Pasuruan</p>
+                                    </div>
+                                </div>
+                                </a>
+                                <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+                                <img src="{{ asset('img/kotapasuruan-logo.png')}}" alt="twbs" width="45px" class="rounded-circle flex-shrink-0">
+                                <div class="d-flex gap-2 w-100 justify-content-between">
+                                    <div>
+                                    <h6 class="mb-2 fw-bold">PELANGI</h6>
+                                    <p class="mb-0 opacity-75">Dinas Kesehatan Kota Pasuruan</p>
+                                    </div>
+                                </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="d-flex flex-column flex-md-row p-4 gap-4 py-md-5 align-items-center justify-content-center">
+                            <div class="list-group">
+                                <div class="py-2">
+                                    <h4>Kategori Masyarakat Tiga Terbaik:</h4>
+                                </div> 
+                                <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+                                <img src="{{ asset('img/kotapasuruan-logo.png')}}" alt="twbs" width="45px" class="rounded-circle flex-shrink-0">
+                                <div class="d-flex gap-2 w-100 justify-content-between">
+                                    <div>
+                                    <h6 class="mb-2 fw-bold">OBAT NYAMUK ELEKTRIK</h6>
+                                    <p class="mb-0 opacity-75">Aris Tehnik</p>
+                                    </div>
+                                </div>
+                                </a>
+                                <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+                                <img src="{{ asset('img/kotapasuruan-logo.png')}}" alt="twbs" width="45px" class="rounded-circle flex-shrink-0">
+                                <div class="d-flex gap-2 w-100 justify-content-between">
+                                    <div>
+                                    <h6 class="mb-2 fw-bold">Mengolah Limbah Kayu Jati Menjadi Mainan Anak-anak </h6>
+                                    <p class="mb-0 opacity-75">Artdias</p>
+                                    </div>
+                                </div>
+                                </a>
+                                <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+                                <img src="{{ asset('img/kotapasuruan-logo.png')}}" alt="twbs" width="45px" class="rounded-circle flex-shrink-0">
+                                <div class="d-flex gap-2 w-100 justify-content-between">
+                                    <div>
+                                    <h6 class="mb-2 fw-bold">Alarm Banjir Information</h6>
+                                    <p class="mb-0 opacity-75">Karangtaruna Kecamatan Purworejo</p>
+                                    </div>
+                                </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row align-items-center">
+                    <div class="col">
+                        <div class="d-flex flex-column flex-md-row p-4 gap-4 py-md-5 align-items-center justify-content-center">
+                            <div class="list-group">
+                                <div class="py-2 text-center">
+                                    <h4>Juara Favorit:</h4>
+                                </div> 
+                                <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+                                <img src="{{ asset('img/kotapasuruan-logo.png')}}" alt="twbs" width="45px" class="rounded-circle flex-shrink-0">
+                                <div class="d-flex gap-2 w-100 justify-content-between">
+                                    <div>
+                                    <h6 class="mb-2 fw-bold">SPONTAN</h6>
+                                    <p class="mb-0 opacity-75">RSUD. Dr. Soedarsono</p>
+                                    </div>
+                                </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>      
+        </div>
 
         <div class="container text-center my-5 dokumentasi border-top">
             <div class="py-3">
-                Kilas Balik RKC 2023
+                Kilas Balik Reka Karsa Cipta 2023
             </div> 
             <div class="container mt-4">
                 <div class="row">
