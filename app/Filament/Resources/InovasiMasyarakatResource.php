@@ -92,6 +92,10 @@ class InovasiMasyarakatResource extends Resource
                 Forms\Components\FileUpload::make('penghargaan')
                 ->preserveFilenames()
                 ->openable(),
+                Forms\Components\FileUpload::make('skt')
+                ->label('SK / SKT')
+                ->preserveFilenames()
+                ->openable(),
             ]);
     }
 
@@ -125,6 +129,9 @@ class InovasiMasyarakatResource extends Resource
                         // delete single
                         if ($record->penghargaan) {
                             Storage::disk('public')->delete($record->penghargaan);
+                        }
+                        if ($record->skt) {
+                            Storage::disk('public')->delete($record->skt);
                         }
                     }),
                 ])

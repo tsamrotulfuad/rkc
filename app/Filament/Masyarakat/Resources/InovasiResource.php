@@ -98,6 +98,11 @@ class InovasiResource extends Resource
                 Forms\Components\FileUpload::make('penghargaan')
                 ->preserveFilenames()
                 ->openable(),
+                Forms\Components\FileUpload::make('skt')
+                ->label('SK / SKT')
+                ->hint('Max.25Mb, MP4/AVI/MOV')
+                ->preserveFilenames()
+                ->openable(),
             ]);
     }
 
@@ -132,6 +137,9 @@ class InovasiResource extends Resource
                         // delete single
                         if ($record->penghargaan) {
                             Storage::disk('public')->delete($record->penghargaan);
+                        }
+                        if ($record->skt) {
+                            Storage::disk('public')->delete($record->skt);
                         }
                     }),
                 ])
