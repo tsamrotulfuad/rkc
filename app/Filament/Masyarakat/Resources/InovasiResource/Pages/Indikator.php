@@ -53,6 +53,7 @@ class Indikator extends ManageRelatedRecords
                     Forms\Components\FileUpload::make('sosialisasi_upload')
                     ->label('Bukti Dukung Sosialisasi')
                     ->preserveFilenames()
+                    ->downloadable()
                     ->columnSpanFull()
                     ->required(),
                     Textarea::make('kemanfaatan')
@@ -63,9 +64,13 @@ class Indikator extends ManageRelatedRecords
                     ->label('Bukti Dukung Kemanfaatan')
                     ->preserveFilenames()
                     ->columnSpanFull()
+                    ->downloadable()
                     ->required(),
                     Forms\Components\FileUpload::make('kualitas')
                     ->preserveFilenames()
+                    ->maxSize(25000)
+                    ->downloadable()
+                    ->acceptedFileTypes(['video/mp4'])
                     ->required()
                     ->columnSpanFull()
             ]);

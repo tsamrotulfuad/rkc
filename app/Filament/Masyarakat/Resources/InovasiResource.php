@@ -100,7 +100,6 @@ class InovasiResource extends Resource
                 ->openable(),
                 Forms\Components\FileUpload::make('skt')
                 ->label('SK / SKT')
-                ->hint('Max.25Mb, MP4/AVI/MOV')
                 ->preserveFilenames()
                 ->openable(),
             ]);

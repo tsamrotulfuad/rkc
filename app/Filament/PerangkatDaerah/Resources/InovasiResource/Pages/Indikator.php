@@ -208,9 +208,11 @@ class Indikator extends ManageRelatedRecords
                     ->required(),
                 ]),
                 Forms\Components\FileUpload::make('kualitas')
+                ->preserveFilenames()
+                ->maxSize(25000)
+                ->acceptedFileTypes(['video/mp4'])
                 ->required()
                 ->columnSpanFull()
-                ->downloadable()
             ]);
     }
 
