@@ -153,15 +153,19 @@ class InovasiResource extends Resource
                 ->columnSpan(2)
                 ->required(),
                 Forms\Components\FileUpload::make('anggaran')
+                ->label('Anggaran (Bila Ada)')
                 ->preserveFilenames()
                 ->openable(),
                 Forms\Components\FileUpload::make('profil_bisnis')
+                ->label('Profil Bisnis (Bila Ada)')
                 ->preserveFilenames()
                 ->openable(),
                 Forms\Components\FileUpload::make('doc_haki')
+                ->label('Dokumen Haki (Bila Ada)')
                 ->preserveFilenames()
                 ->openable(),
                 Forms\Components\FileUpload::make('penghargaan')
+                ->label('Penghargaan (Bila Ada)')
                 ->preserveFilenames()
                 ->openable(),
             ]);

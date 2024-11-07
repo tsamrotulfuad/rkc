@@ -78,13 +78,11 @@ class IndikatorPerangkatDaerah extends ManageRelatedRecords
                     ])
                     ->label('Dukungan Anggaran')
                     ->columnSpanFull()
-                    ->native(false)
-                    ->required(),
+                    ->native(false),
                     Forms\Components\FileUpload::make('dukungan_anggaran_upload')
-                    ->label('Bukti Dukung')
+                    ->label('Bukti Dukung (Bila Ada)')
                     ->columnSpanFull()
-                    ->downloadable()
-                    ->required(),
+                    ->downloadable(),
                 ]),
                 Section::make()->schema([
                     Forms\Components\Select::make('kecepatan_penciptaan')
