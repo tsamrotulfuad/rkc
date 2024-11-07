@@ -36,6 +36,7 @@ class IndikatorPerangkatDaerah extends ManageRelatedRecords
                 Section::make()->schema([
                     Forms\Components\Select::make('regulasi')
                         ->options([
+                            'SK Kepala UPT' => 'SK Kepala UPT',
                             'SK Kepala Perangkat Daerah' => 'SK Kepala Perangkat Daerah',
                             'SK Kepala Daerah' => 'SK Kepala Daerah',
                             'Peraturan Kepala Daerah / Peraturan Daerah' => 'Peraturan Kepala Daerah / Peraturan Daerah',
@@ -70,6 +71,7 @@ class IndikatorPerangkatDaerah extends ManageRelatedRecords
                 Section::make()->schema([
                     Forms\Components\Select::make('dukungan_anggaran')
                     ->options([
+                        'Tidak ada dukungan anggaran' => 'Tidak ada dukungan anggaran',
                         'Anggaran dialokasikan pada kegiatan penerapan inovasi di T-0(Tahun Berjalan)' => 'Anggaran dialokasikan pada kegiatan penerapan inovasi di T-0(Tahun Berjalan)',
                         'Anggaran dialokasikan pada kegiatan penerapan inovasi di T-1 atau T-2' => 'Anggaran dialokasikan pada kegiatan penerapan inovasi di T-1 atau T-2',
                         'Anggaran dialokasikan pada kegiatan penerapan inovasi di T-0,T-1 dan T-2' => 'Anggaran dialokasikan pada kegiatan penerapan inovasi di T-0,T-1 dan T-2',
