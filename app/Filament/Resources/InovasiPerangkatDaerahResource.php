@@ -6,7 +6,9 @@ use Filament\Forms;
 use Filament\Tables;
 use Filament\Forms\Form;
 use Filament\Tables\Table;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Filament\Resources\Resource;
+use Illuminate\Support\Facades\Blade;
 use App\Models\InovasiPerangkatDaerah;
 use Illuminate\Support\Facades\Storage;
 use Filament\Tables\Actions\ActionGroup;
@@ -186,6 +188,17 @@ class InovasiPerangkatDaerahResource extends Resource
                     ->icon('heroicon-s-folder')
                     ->button()
                     ->outlined(),
+                Tables\Actions\Action::make('Pdf')
+                ->label('PDF')
+                ->icon('heroicon-o-document-text')
+                ->color('success')
+                ->action(function (InovasiPerangkatDaerah $record) {
+                    return response()->streamDownload(function () use ($record) {
+                        echo Pdf::loadHtml(
+                            Blade::render('pdf', ['record' => $record])
+                        )->stream();
+                    }, $record->nama . '.pdf');
+                }),
                 ActionGroup::make([
                     Tables\Actions\ViewAction::make(),
                     Tables\Actions\EditAction::make(),
