@@ -211,6 +211,7 @@ class Indikator extends ManageRelatedRecords
                     ->required(),
                 ]),
                 Forms\Components\FileUpload::make('kualitas')
+                ->label('Kualitas (Format MP4, Max. 25MB')
                 ->preserveFilenames()
                 ->maxSize(25000)
                 ->acceptedFileTypes(['video/mp4'])
