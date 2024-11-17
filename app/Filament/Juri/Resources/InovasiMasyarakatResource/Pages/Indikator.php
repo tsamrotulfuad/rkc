@@ -54,7 +54,9 @@ class Indikator extends ManageRelatedRecords
                     ->label('Bukti Dukung Sosialisasi')
                     ->preserveFilenames()
                     ->columnSpanFull()
-                    ->required(),
+                    ->deletable(false)
+                    ->required()
+                    ->openable(),
                     Textarea::make('kemanfaatan')
                     ->columnSpanFull()
                     ->characterLimit(3000)
@@ -63,11 +65,13 @@ class Indikator extends ManageRelatedRecords
                     ->label('Bukti Dukung Kemanfaatan')
                     ->preserveFilenames()
                     ->columnSpanFull()
-                    ->required(),
+                    ->required()
+                    ->openable(),
                     Forms\Components\FileUpload::make('kualitas')
                     ->preserveFilenames()
                     ->required()
                     ->columnSpanFull()
+                    ->openable()
             ]);
     }
     
@@ -90,33 +94,33 @@ class Indikator extends ManageRelatedRecords
             ->filters([
                 //
             ])
-            ->headerActions([
-                Tables\Actions\CreateAction::make()
-                ->label('Tambah Indikator')
-                ->createAnother(false)
-                ->modalHeading('List Indikator'),
-            ])
+            // ->headerActions([
+            //     Tables\Actions\CreateAction::make()
+            //     ->label('Tambah Indikator')
+            //     ->createAnother(false)
+            //     ->modalHeading('List Indikator'),
+            // ])
             ->actions([
-                Tables\Actions\ViewAction::make(),
-                Tables\Actions\EditAction::make(),
-                Tables\Actions\DeleteAction::make()
-                ->after(function (IndikatorMasyarakat $record) {
-                    // delete file
-                    if ($record->sosialisasi_upload) {
-                        Storage::disk('public')->delete($record->sosialisasi_upload);
-                    }
-                    if ($record->kemanfaatan_upload) {
-                        Storage::disk('public')->delete($record->kemanfaatan_upload);
-                    }
-                    if ($record->kualitas) {
-                        Storage::disk('public')->delete($record->kualitas);
-                    }
-                }),
+                Tables\Actions\ViewAction::make()
+                // Tables\Actions\EditAction::make(),
+                // Tables\Actions\DeleteAction::make()
+                // ->after(function (IndikatorMasyarakat $record) {
+                //     // delete file
+                //     if ($record->sosialisasi_upload) {
+                //         Storage::disk('public')->delete($record->sosialisasi_upload);
+                //     }
+                //     if ($record->kemanfaatan_upload) {
+                //         Storage::disk('public')->delete($record->kemanfaatan_upload);
+                //     }
+                //     if ($record->kualitas) {
+                //         Storage::disk('public')->delete($record->kualitas);
+                //     }
+                // }),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DissociateBulkAction::make(),
-                    Tables\Actions\DeleteBulkAction::make(),
+                    // Tables\Actions\DeleteBulkAction::make(),
                 ]),
             ]);
     }
