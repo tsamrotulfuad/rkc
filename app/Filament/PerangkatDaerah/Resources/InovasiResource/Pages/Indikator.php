@@ -236,12 +236,12 @@ class Indikator extends ManageRelatedRecords
             ->filters([
                 //
             ])
-            ->headerActions([
-                Tables\Actions\CreateAction::make()
-                ->label('Tambah Indikator')
-                ->createAnother(false)
-                ->modalHeading('List Indikator'),
-            ])
+            // ->headerActions([
+            //     Tables\Actions\CreateAction::make()
+            //     ->label('Tambah Indikator')
+            //     ->createAnother(false)
+            //     ->modalHeading('List Indikator'),
+            // ])
             ->actions([
                 Tables\Actions\ViewAction::make()
                 ->modalHeading('View Indikator'),
@@ -280,7 +280,7 @@ class Indikator extends ManageRelatedRecords
                 }),
             ])
             ->bulkActions([
-                Tables\Actions\BulkActionGroup::make([
+                    Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make(),
                 ]),
             ]);

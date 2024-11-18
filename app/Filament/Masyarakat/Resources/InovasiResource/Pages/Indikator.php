@@ -96,12 +96,12 @@ class Indikator extends ManageRelatedRecords
             ->filters([
                 //
             ])
-            ->headerActions([
-                Tables\Actions\CreateAction::make()
-                ->label('Tambah Indikator')
-                ->createAnother(false)
-                ->modalHeading('List Indikator'),
-            ])
+            // ->headerActions([
+            //     Tables\Actions\CreateAction::make()
+            //     ->label('Tambah Indikator')
+            //     ->createAnother(false)
+            //     ->modalHeading('List Indikator'),
+            // ])
             ->actions([
                 Tables\Actions\ViewAction::make(),
                 Tables\Actions\EditAction::make(),

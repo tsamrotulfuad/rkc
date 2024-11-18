@@ -164,7 +164,7 @@ class InovasiResource extends Resource
     {
         return [
             'index' => Pages\ListInovasis::route('/'),
-            'create' => Pages\CreateInovasi::route('/create'),
+            // 'create' => Pages\CreateInovasi::route('/create'),
             'edit' => Pages\EditInovasi::route('/{record}/edit'),
             'indikator' => Pages\Indikator::route('/{record}/indikator'),
         ];

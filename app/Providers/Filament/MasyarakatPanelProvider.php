@@ -29,7 +29,7 @@ class MasyarakatPanelProvider extends PanelProvider
             ->id('masyarakat')
             ->path('masyarakat')
             ->login()
-            ->registration(MasyarakatRegister::class)
+            // ->registration(MasyarakatRegister::class)
             ->brandLogo(asset('img/rkc-logo.png'))
             ->brandLogoHeight(fn() => auth()->check() ? '3.6rem' : '9rem' )
             ->favicon(asset('img/rkc-logo.png'))
