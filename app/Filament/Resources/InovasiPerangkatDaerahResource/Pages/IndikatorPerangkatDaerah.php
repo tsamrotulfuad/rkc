@@ -48,7 +48,7 @@ class IndikatorPerangkatDaerah extends ManageRelatedRecords
                     Forms\Components\FileUpload::make('regulasi_upload')
                         ->label('Bukti Dukung')
                         ->columnSpanFull()
-                        ->downloadable()
+                        ->openable()
                         ->required(),
                     ]),
                 Section::make()->schema([
@@ -65,7 +65,7 @@ class IndikatorPerangkatDaerah extends ManageRelatedRecords
                     Forms\Components\FileUpload::make('ketersediaan_sdm_upload')
                         ->label('Bukti Dukung')
                         ->columnSpanFull()
-                        ->downloadable()
+                        ->openable()
                         ->required(),
                     ]),
                 Section::make()->schema([
@@ -82,7 +82,7 @@ class IndikatorPerangkatDaerah extends ManageRelatedRecords
                     Forms\Components\FileUpload::make('dukungan_anggaran_upload')
                     ->label('Bukti Dukung (Bila Ada)')
                     ->columnSpanFull()
-                    ->downloadable(),
+                    ->openable(),
                 ]),
                 Section::make()->schema([
                     Forms\Components\Select::make('kecepatan_penciptaan')
@@ -98,7 +98,7 @@ class IndikatorPerangkatDaerah extends ManageRelatedRecords
                     Forms\Components\FileUpload::make('kecepatan_penciptaan_upload')
                     ->label('Bukti Dukung')
                     ->columnSpanFull()
-                    ->downloadable()
+                    ->openable()
                     ->required(),
                 ]),
                 Section::make('Kemanfaatan')->schema([
@@ -154,7 +154,7 @@ class IndikatorPerangkatDaerah extends ManageRelatedRecords
                     Forms\Components\FileUpload::make('kemanfaatan_upload')
                     ->label('Bukti Dukung')
                     ->columnSpanFull()
-                    ->downloadable()
+                    ->openable()
                     ->required(),
                 ]),
                 Section::make()->schema([
@@ -170,7 +170,7 @@ class IndikatorPerangkatDaerah extends ManageRelatedRecords
                     Forms\Components\FileUpload::make('sosialisasi_upload')
                     ->label('Bukti Dukung')
                     ->columnSpanFull()
-                    ->downloadable()
+                    ->openable()
                     ->required(),
                 ]),
                 Section::make()->schema([
@@ -186,7 +186,7 @@ class IndikatorPerangkatDaerah extends ManageRelatedRecords
                     Forms\Components\FileUpload::make('kemudahan_proses_upload')
                     ->label('Bukti Dukung')
                     ->columnSpanFull()
-                    ->downloadable()
+                    ->openable()
                     ->required(),
                 ]),
                 Section::make()->schema([
@@ -202,13 +202,13 @@ class IndikatorPerangkatDaerah extends ManageRelatedRecords
                     Forms\Components\FileUpload::make('alat_kerja_upload')
                     ->label('Bukti Dukung')
                     ->columnSpanFull()
-                    ->downloadable()
+                    ->openable()
                     ->required(),
                 ]),
                 Forms\Components\FileUpload::make('kualitas')
                 ->required()
                 ->columnSpanFull()
-                ->downloadable()
+                ->openable()
             ]);
     }
 
