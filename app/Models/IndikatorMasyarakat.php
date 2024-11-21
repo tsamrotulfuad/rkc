@@ -38,4 +38,9 @@ class IndikatorMasyarakat extends Model
     public function inovasi() : BelongsTo {
         return $this->belongsTo(InovasiMasyarakat::class);
     }
+
+    protected $casts = [
+        'sosialisasi_upload' => 'array',
+        'kemanfaatan_upload' => 'array'
+    ];
 }

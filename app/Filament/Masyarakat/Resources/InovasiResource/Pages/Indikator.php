@@ -53,6 +53,7 @@ class Indikator extends ManageRelatedRecords
                     Forms\Components\FileUpload::make('sosialisasi_upload')
                     ->label('Bukti Dukung Sosialisasi')
                     ->preserveFilenames()
+                    ->multiple()
                     ->downloadable()
                     ->columnSpanFull()
                     ->required(),
@@ -64,6 +65,7 @@ class Indikator extends ManageRelatedRecords
                     ->label('Bukti Dukung Kemanfaatan')
                     ->preserveFilenames()
                     ->columnSpanFull()
+                    ->multiple()
                     ->downloadable()
                     ->required(),
                     Forms\Components\FileUpload::make('kualitas')
